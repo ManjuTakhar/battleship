@@ -19,7 +19,8 @@ class Random {
     Random() : rng_(std::random_device{}()) {}
     int nextInt(int min, int max) { return std::uniform_int_distribution<int>(min, max)(rng_); }
     bool nextBool() { return std::bernoulli_distribution(0.5)(rng_); }
-    // # fix: expose deterministic seed for reproducible games
+    // # fix: expose deterministic seed for reproducible games:
+    //        Allow injecting a seed (env/CLI/config) so runs can be repeated exactly.
 
   private:
     std::mt19937 rng_;

@@ -30,6 +30,24 @@ Interactive command-line Battleship written in modern C++. You and the computer 
 - Configurable board sizes and ship sets.
 - Colorized output, clearer repeated-shot feedback, richer examples.
 
+## Planned Fixes to be done
+- Config loading/persistence: load from a local `battleship.config` (simple `key=value` or JSON). On startup, read the file, validate, and fall back to defaults; expose `saveToFile()` to persist changes.
+- Config validation: enforce board size in a safe range (e.g., 5–20), ship sizes >0 and <= board size, unique/non-empty ship names, and whitelist option keys.
+- Board size overrides: allow board size to be set in config; reject configs where ships don’t fit; propagate board size to game setup.
+- Ship sets: support multiple named ship presets; select via config key; default to the classic fleet.
+- Serialization APIs: add `loadFromFile(path)` and `saveToFile(path)` on `Config`; handle missing/invalid files gracefully.
+- Integration: have `Player` pull ship definitions from `Config::ships()` and make the board size driven by config instead of a fixed constant at startup.
+- Deterministic randomness: allow injecting a seed (CLI/env/config) into `Random` so games can be replayed exactly.
+- Hit tracking: switch `Ship` hit tracking to a `std::set` for O(log n) lookup and duplicate prevention.
+- Ship placement options: support manual placement flow for the human player; keep auto-placement for the computer.
+- Board rendering: show last-move summary in the CLI header; keep symbols aligned with legend.
+- Input parsing: trim whitespace, require A–J plus 1–10, reject leading zeros/trailing chars; keep re-prompt loop.
+- Attack feedback: include ship names when sunk; improve “already tried” messaging on repeated shots.
+- Game loop extras: add game duration timing; offer replay without restart; persist win/loss stats to a file.
+- AI targeting: add smarter follow-up on hits (orientation/adjacent targeting) instead of pure random.
+- Knowledge board rules: only mark public states (hit/miss/sunk) and ignore invalid states.
+- Placement spacing: enforce no-touch/no-overlap (including diagonals) when placing ships.
+
 ## Notes
 - Ships are placed randomly with collision checks.
 - Code is organized into small classes: `Position`, `Ship`, `Board`, `Player`, `CliView`, `Game`.
