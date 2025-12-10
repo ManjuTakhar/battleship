@@ -18,7 +18,6 @@ Interactive command-line Battleship written in modern C++. You and the computer 
 ## Input Rules
 - Columns A-J (case-insensitive), rows 1-10. No commas/spaces needed (e.g., `B7`, `j10`).
 - Invalid entries are rejected; you’ll be prompted again.
-- # fix: clarify behavior for duplicate/whitespace inputs.
 
 
 ## Strategy Basics
