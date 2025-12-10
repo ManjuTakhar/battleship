@@ -1,0 +1,40 @@
+./battleship
+
+Your Target Board (what you know about the enemy):
+   A B C D E F G H I J
+ 1 . . . . . . . . . .
+ 2 . . . . . . . . . .
+ 3 . . . . . . . . . .
+ 4 . . . . . . . . . .
+ 5 . . . . . . . . . .
+ 6 . . . . . . . . . .
+ 7 . . . . . . . . . .
+ 8 . . . . . . . . . .
+ 9 . . . . . . . . . .
+10 . . . . . . . . . .
+
+Your Fleet Board:
+   A B C D E F G H I J
+ 1 S S S S S . . . . .
+ 2 . . . . . . . . . .
+ 3 . . . . . . . . . .
+ 4 . . . . . . . . . .
+ 5 . . . . . . . . . .
+ 6 . . . . . . . . . .
+ 7 . . . . . . . . . .
+ 8 . . . . . . . . . .
+ 9 . . . . . . . . . .
+10 . . . . . . . . . .
+
+Enter target (e.g., A5): B7
+Hit on Computer's ship!
+
+Enemy fires at C3...
+Miss.
+
+Enter target (e.g., A5): B8
+Hit on Computer's ship!
+
+Enter target (e.g., A5): B9
+Ship sunk. Fleet destroyed!
+You win! All enemy ships sunk.
