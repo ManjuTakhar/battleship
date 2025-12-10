@@ -20,20 +20,11 @@ Interactive command-line Battleship written in modern C++. You and the computer 
 - Invalid entries are rejected; you’ll be prompted again.
 - # fix: clarify behavior for duplicate/whitespace inputs.
 
-## Quick Example (text)
-- Launch: `./battleship`
-- Sample turns:
-  - Player: `B7` → `Hit on Computer's ship!`
-  - Enemy: fires `C3` → `Miss.`
-  - Player: `B8` → `Hit on Computer's ship!`
-  - Player: `B9` → `Ship sunk. Fleet destroyed!` → You win.
-- See `example.txt` for the full snippet; extendable per # fix notes.
 
 ## Strategy Basics
 - Fire in a checkerboard pattern to cover cells efficiently.
 - After a hit, probe orthogonally to find ship orientation.
 - Track sunk ships to avoid redundant guesses.
-- # fix: add probability/heat-map targeting guidance.
 
 ## Improvements (selected # fix)
 - Smarter AI, manual placement, reproducible seeds.
@@ -43,4 +34,3 @@ Interactive command-line Battleship written in modern C++. You and the computer 
 ## Notes
 - Ships are placed randomly with collision checks.
 - Code is organized into small classes: `Position`, `Ship`, `Board`, `Player`, `CliView`, `Game`.
-- Inline `# fix` markers highlight future improvement without affecting gameplay.
